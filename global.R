@@ -16,7 +16,7 @@ library(zoo) # na.trim function
 library(readr) # csv manipulation
 library(mgcv) # gam function (lisser les courbes)
 
-library(movaround)
+library(telraamStats)
 
 ########
 # File import
