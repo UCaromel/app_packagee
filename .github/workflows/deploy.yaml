@@ -27,10 +27,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev libssl-dev
 
     - name: Install R packages
-      run: |
-        R -e "install.packages(c('shiny', 'httr', 'jsonlite', 'lubridate', 'cowplot', 'CPAT', 'synchrony', 'forecast', 'zoo', 'readr', 'mgcv', 'remotes'))"
-        R -e "remotes::install_github('UCaromel/telraamStats')"
-        R -e "remotes::install_version('rsconnect', '0.8.29')"
+      run: Rscript install-packages_deploy.R
 
     - name: Deploy to shinyapps.io
       run: |
