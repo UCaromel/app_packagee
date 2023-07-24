@@ -28,7 +28,8 @@ jobs:
 
     - name: Install packages
       run: |
-        R -e "install.packages(c('shiny', 'rsconnect'), repos='https://cran.rstudio.com/')"
+        R -e "install.packages(c('shiny', 'remotes'), repos='https://cran.rstudio.com/')"
+        R -e "remotes::install_version("rsconnect", "0.8.29")"
 
     - name: Deploy to shinyapps.io
       run: |
