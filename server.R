@@ -8,4 +8,4 @@ shinyServer(function(session,input, output) {
   callModule(server_6, id = "6", session = session, data)
 })
 
-#install.packages("C:/Users/Ulysse/Documents/ulysse/appli stage/mov-around-pkg/movaround_0.0.0.9000.tar.gz")
+#install.packages("C:/Users/Ulysse/Documents/ulysse/appli_stage/mov-around-pkg/telraamStats_0.0.0.9000.tar.gz")
