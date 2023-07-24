@@ -28,7 +28,7 @@ jobs:
 
     - name: Install R packages
       run: |
-        R -e "install.packages(c('shiny', 'tidyverse', 'httr', 'jsonlite', 'lubridate', 'cowplot', 'CPAT', 'synchrony', 'forecast', 'zoo', 'readr', 'mgcv', 'remotes'), repos='https://cran.rstudio.com/')"
+        R -e "install.packages(c('shiny', 'tidyverse', 'httr', 'jsonlite', 'lubridate', 'cowplot', 'CPAT', 'synchrony', 'forecast', 'zoo', 'readr', 'mgcv', 'remotes'))"
         R -e "remotes::install_github('UCaromel/telraamStats')"
         R -e "remotes::install_version('rsconnect', '0.8.29')"
 
