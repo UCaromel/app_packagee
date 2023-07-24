@@ -1,2 +1,2 @@
 install.packages(c("lubridate","purrr","jsonlite","readr","httr","dplyr", "remotes"))
-remotes::install_github("UCaromel/telraamStats", auth_token = Sys.getenv("GITHUB_PAT"))
+remotes::install_github("UCaromel/telraamStats", "GITHUB_PAT")
