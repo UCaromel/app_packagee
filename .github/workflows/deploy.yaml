@@ -5,6 +5,10 @@ on:
     branches:
       - main
   workflow_dispatch:  # Manual trigger
+  
+env:
+  GITHUB_PAT: ${{ secrets.TOKEN }}
+  MY_KEY: ${{ secrets.MY_KEY }}
 
 jobs:
   deploy:

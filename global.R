@@ -58,14 +58,10 @@ sensor_names <- c("Burel-01","Leclerc-02","ParisMarche-03","rueVignes-04","Paris
 # API key (see the Telraam site to generate one)
 ########
 
-if (file.exists('clef.txt')){
-  key1 <- c(
-    'X-Api-Key' = readLines("clef.txt")
-  )
-  key <- readLines("clef.txt")
-} else {
-  key <- NULL
-}
+key <- Sys.getenv("MY_KEY")
+key1 <- c(
+  'X-Api-Key' = key
+)
 
 
 ########
