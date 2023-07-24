@@ -28,6 +28,8 @@ jobs:
         run: Rscript install-packages.R
 
       - name: Run R script
+        env:
+          MY_KEY: ${{ secrets.MY_KEY }}
         run: Rscript update-database.R
         
       - name: Commit and Push Changes

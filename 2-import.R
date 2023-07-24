@@ -183,7 +183,7 @@ server_2 <- function(input, output, session){
       # verification of the existence of the API's key
       if (is.null(key)){
         update$state <- "La cle pour appeler l'API n'existe pas"
-      } else if (!api_state("clef.txt")){
+      } else if (!api_state(key1)){
         update$state <- "Il semble y avoir un problème au niveau de l'API. Veuillez attendre le lendemain ou contacter le support."
       } else {
         # the update is launched

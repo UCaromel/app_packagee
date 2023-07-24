@@ -58,7 +58,7 @@ updateDatabase <- function(update) {
     # Check the existence of the API's key
     if (is.null(key)) {
       update$state <- "The API key is missing."
-    } else if (!api_state(key)) {
+    } else if (!api_state(key1)) {
       update$state <- "There seems to be a problem with the API. Please wait until tomorrow or contact support."
     } else {
       # Update the database
