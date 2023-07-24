@@ -29,6 +29,7 @@ jobs:
     - name: Install packages
       run: |
         R -e "install.packages(c('shiny', 'remotes'), repos='https://cran.rstudio.com/')"
+        R -e "remotes::install_github('telraamStats')"
         R -e "remotes::install_version('rsconnect', '0.8.29')"
 
     - name: Deploy to shinyapps.io
