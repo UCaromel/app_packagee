@@ -27,7 +27,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y libcurl4-openssl-dev libssl-dev
 
     - name: Install R packages
-      run: Rscript install-packages_deploy.R
+      run: Rscript install-packages-deploy.R
 
     - name: Deploy to shinyapps.io
       run: |
