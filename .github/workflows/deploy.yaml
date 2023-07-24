@@ -33,4 +33,4 @@ jobs:
     - name: Deploy to shinyapps.io
       run: |
         Rscript -e "rsconnect::setAccountInfo(name=${{secrets.SHINY_ACCOUNT}}, token=${{secrets.SHINY_TOKEN}}, secret=${{secrets.SHINY_SECRET}})"
-        Rscript -e "rsconnect::deployApp()" 
+        Rscript -e "rsconnect::deployApp(appName = 'app_packagee')" 
