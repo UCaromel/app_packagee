@@ -32,4 +32,5 @@ jobs:
 
     - name: Deploy to shinyapps.io
       run: |
-        R -e "rsconnect::deployApp(appDir = '.', account = 'ucaromel')"
+        Rscript -e "rsconnect::setAccountInfo(name=${{secrets.SHINY_ACCOUNT}}, token=${{secrets.SHINY_TOKEN}}, secret=${{secrets.SHINY_SECRET}})"
+        Rscript -e "rsconnect::deployApp()" 
