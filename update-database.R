@@ -35,14 +35,10 @@ sensor_names <- c("Burel-01","Leclerc-02","ParisMarche-03","rueVignes-04","Paris
 # API key (see the Telraam site to generate one)
 ########
 
-if (file.exists('clef.txt')){
-  key1 <- c(
-    'X-Api-Key' = readLines("clef.txt")
-  )
-  key <- readLines("clef.txt")
-} else {
-  key <- NULL
-}
+key <- Sys.getenv("MY_KEY")
+key1 <- c(
+  'X-Api-Key' = key
+)
 
 ## Initialization of the update
 
@@ -62,7 +58,7 @@ updateDatabase <- function(update) {
     # Check the existence of the API's key
     if (is.null(key)) {
       update$state <- "The API key is missing."
-    } else if (!api_state()) {
+    } else if (!api_state(key)) {
       update$state <- "There seems to be a problem with the API. Please wait until tomorrow or contact support."
     } else {
       # Update the database
