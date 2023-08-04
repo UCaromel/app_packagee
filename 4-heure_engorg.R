@@ -1,4 +1,5 @@
 
+
 ##############################################
 #                  Module                    #
 ##############################################
@@ -10,9 +11,9 @@ ui_4 <- function(id){
                   label = "Choix du capteur",
                   choices = NULL),
       dateRangeInput(ns("date_range"), "Période",
-                     start  = "2021-01-01",
+                     start  = starting_date,
                      end    = Sys.Date()-days(1),
-                     min    = "2021-01-01",
+                     min    = starting_date,
                      max    = Sys.Date()-days(1)),
       radioButtons(inputId = ns("vacation"), label = "Vacances comprises :",
                    choices = c("Oui","Non","Seulement les vacances"),selected = "Non"),

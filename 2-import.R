@@ -109,7 +109,7 @@ server_2 <- function(input, output, session){
     } else {
       # if truc pas NULL alors keep
       add <- setdiff(input$Capteurs, data$sensors) %>% import_sensor()
-      data$data <- data$data %>% rbind(add) %>% # add new sensors  
+      data$data <- data$data %>% rbind(add) %>% # add new sensors
                                  filter((segment_id %in% input$Capteurs)) # remove sensors that are not selected anymore
       output$import_state <- renderText(paste("Les capteurs importés sont: ", paste(sensor_names[sensor_ids%in%input$Capteurs],collapse=', ')))
       data$sensors <- input$Capteurs
@@ -149,9 +149,9 @@ server_2 <- function(input, output, session){
         ),
         column(3,
                dateRangeInput(ns("date_range_simple_plot"), "Période",
-                              start  = "2021-01-01",
+                              start  = starting_date,
                               end    = Sys.Date() - days(1),
-                              min    = "2021-01-01",
+                              min    = starting_date,
                               max    = Sys.Date() - days(1))
         ),
         column(3),
